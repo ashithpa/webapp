@@ -7,7 +7,7 @@ namespace sqlapp.Services
     // This service will interact with our Product data in the SQL database
     public class ProductService
     {
-        private static string db_source = "appdbserver1.database.windows.net";
+        private static string db_source = "appdbserver1234.database.windows.net";
         private static string db_user = "sqladmin";
         private static string db_password = "*Secure12345*";
         private static string db_database = "appdb";
@@ -25,7 +25,8 @@ namespace sqlapp.Services
         public List<Product> GetProducts()
         {
             List<Product> _product_lst = new List<Product>();
-            string _statement = "SELECT ProductID,ProductName,Quantity,ProductImage from Products";
+            string _statement = "SELECT ProductID,ProductName,Quantity from Products";
+            //string _statement = "SELECT ProductID,ProductName,Quantity,ProductImage from Products";
             SqlConnection _connection = GetConnection();
             
             _connection.Open();
@@ -41,7 +42,7 @@ namespace sqlapp.Services
                         ProductID = _reader.GetInt32(0),
                         ProductName = _reader.GetString(1),
                         Quantity = _reader.GetInt32(2),
-                        ProductImage = _reader.GetString(3)
+                        //ProductImage = _reader.GetString(3)
                     };
 
                     _product_lst.Add(_product);
