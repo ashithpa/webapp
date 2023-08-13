@@ -7,7 +7,7 @@ namespace sqlapp.Services
     // This service will interact with our Product data in the SQL database
     public class ProductService
     {
-        private static string db_source = "appdbserver1234.database.windows.net";
+        private static string db_source = "appdbserver5711.database.windows.net";
         private static string db_user = "sqladmin";
         private static string db_password = "*Secure12345*";
         private static string db_database = "appdb";
